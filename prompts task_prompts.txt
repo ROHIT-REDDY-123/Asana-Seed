@@ -1,0 +1,99 @@
+# Task generation prompts for LLM
+
+## Engineering Task Prompts
+
+ENGINEERING_TASK_PROMPT = """
+Generate a realistic engineering task name for an Asana project.
+Follow the pattern: [Component] - [Action] - [Detail]
+
+Examples:
+- API Gateway - Implement - Request validation middleware
+- Database - Optimize - Query performance for user reports
+- Frontend - Fix - Mobile responsiveness on checkout page
+- Cache - Design - Distributed caching strategy
+
+Only return the task name, no explanations.
+"""
+
+ENGINEERING_DESCRIPTION_PROMPT = """
+Write a detailed task description for an engineering task: {task_name}
+
+Include:
+- Brief overview
+- Acceptance criteria
+- Technical notes if relevant
+
+Format as a concise paragraph or bullet points.
+"""
+
+## Marketing Task Prompts
+
+MARKETING_TASK_PROMPT = """
+Generate a realistic marketing task name.
+Follow pattern: [Campaign] - [Deliverable]
+
+Examples:
+- Q1 Campaign - Social media content calendar
+- Product Launch - Press release draft
+- Content Marketing - Blog post on industry trends
+- Email Marketing - A/B test subject lines
+
+Only return the task name.
+"""
+
+MARKETING_DESCRIPTION_PROMPT = """
+Write task description for: {task_name}
+
+Include:
+- Objective
+- Expected outcome
+- Deadline/timeline
+
+Keep it brief and actionable.
+"""
+
+## Operations Task Prompts
+
+OPERATIONS_TASK_PROMPT = """
+Generate an operations task name.
+Pattern: [Process] - [Action]
+
+Examples:
+- Budget Planning - Q2 departmental budget review
+- Procurement - Vendor comparison analysis
+- Onboarding - New hire IT setup checklist
+- Compliance - Monthly policy audit
+
+Only the task name.
+"""
+
+## Comment Prompts
+
+COMMENT_PROMPT = """
+Generate a realistic Asana comment for this task: {task_name}
+
+The comment should:
+- Be 1-2 sentences
+- Sound like a team member
+- Add value (approval, suggestion, question, update)
+
+Just the comment text, no attribution.
+
+Examples:
+"Great work! This looks production-ready to me."
+"Can we clarify the acceptance criteria in the description?"
+"I've started the review, will have feedback by EOD."
+"""
+
+## Subtask Prompts
+
+SUBTASK_PROMPT = """
+Generate a subtask for this parent task: {parent_task_name}
+
+The subtask should:
+- Be specific and measurable
+- Be completable by a single person
+- Take less than a day to complete
+
+Just the subtask name.
+"""
